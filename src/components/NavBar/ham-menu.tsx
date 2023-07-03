@@ -20,7 +20,7 @@ const HamburgerMenuButton: React.FC<HamburgerMenuButtonProps> = ({ onClick }) =>
   };
 
   return (
-    <button className={`hamburger-menu-button ${isActive ? '' : 'active'}`} onClick={handleClick}>
+    <button data-testid="hamburger-button" className={`hamburger-menu-button ${isActive ? '' : 'active'}`} onClick={handleClick}>
       <span className="line"></span>
       <span className="line"></span>
       <span className="line"></span>
