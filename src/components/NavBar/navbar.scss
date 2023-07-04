@@ -1,3 +1,20 @@
+$breakpoint-tablet: 768px;
+
+.navbar{
+  &-brand{
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+  &-cart{
+    font-size: 1rem;
+
+    @media screen and (max-width: $breakpoint-tablet) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
 .mobile-navbar{
     position: fixed;
     width: 0;
@@ -7,6 +24,18 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    z-index: 5;
+
+    ul {
+      li{
+        padding: 0.5rem 0;
+      }
+    }
+
+    a {
+      font-size: 1.5rem;
+      margin: 2rem 1rem;
+    }
 }
 
 
@@ -21,12 +50,10 @@
     }
 }
 
-
-
 .hamburger-menu-button {
     position: fixed;
-    right: 1rem;
-    top: 1rem;
+    right: 0rem;
+    top: 0rem;
     z-index: 999;
     background: transparent;
     border: none;
@@ -34,21 +61,24 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 2rem;
-    height: 2rem;
-  }
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    background-color: white;
 
-  .hamburger-menu-button .line {
-    position: relative;
-    width: 2rem;
-    height: 0.25rem;
-    background: #333;
-    transition: all 0.3s linear;
+    .line {
+      position: relative;
+      width: 1.5rem;
+      height: 0.25rem;
+      background: #333;
+      transition: all 0.3s linear;
+      margin: 2px 0;
+    }
   }
-
 
   .hamburger-menu-button.active .line:nth-child(1) {
-    transform: rotate(-45deg) translate(-14px, 11px);
+    transform: rotate(-45deg) translate(-6px, 6px);
   }
 
   .hamburger-menu-button.active .line:nth-child(2) {
@@ -56,5 +86,9 @@
   }
 
   .hamburger-menu-button.active .line:nth-child(3) {
-    transform: rotate(45deg) translate(-2px, 0);
+    transform: rotate(45deg) translate(-5px, -6px);
   }
+
+
+
+

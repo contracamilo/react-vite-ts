@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;600&display=swap');
 
+
 #root {
   margin: 0 auto;
   padding: 0;
@@ -46,6 +47,40 @@ ul{
   justify-content: space-around;
 }
 
+.items-center{
+  align-items: center;
+}
+
+
 .none{
   display: none;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.relative{
+  position: relative;
+}
+
+.b{
+  font-weight: bold;
+}
+
+.f3{
+  font-size: 1.2rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+  gap: 20px; /* Espacio entre los elementos de la cuadrícula */
+  padding: 20px; /* Padding del contenedor */
+}
+
+@media (max-width: 720px) {
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }

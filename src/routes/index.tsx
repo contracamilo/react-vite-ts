@@ -8,7 +8,7 @@ import Orders from "../pages/orders";
 
 
 interface RoutesWrapperProps {
-    children: ReactElement;
+    children?: ReactElement;
 }
 
 const AppRoutes = () => {

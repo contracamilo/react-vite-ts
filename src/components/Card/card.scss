@@ -1,0 +1,39 @@
+.card{
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+
+    figure{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        height: 194px;
+        overflow: hidden;
+        border-radius: 0.5rem;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .tag-name{
+        background-color: #d1cece;
+        padding: 0 0.6rem;
+        border-radius: 1rem;
+        left: 0.5rem;
+        bottom: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    button {
+        right: 0.5rem;
+        top: 0.5rem;
+    }
+
+    p{
+        margin: 0;
+        padding: 0.25rem 0;
+    }
+}

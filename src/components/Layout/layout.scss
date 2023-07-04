@@ -1,0 +1,23 @@
+.layout{
+    flex-direction: column;
+    min-height: 100vh;
+
+    &__content {
+        flex-grow: 1;
+    }
+
+    &__nav {
+        /* Estilos para tu barra de navegación */
+    }
+
+    &__footer {
+        /* Estilos para tu pie de página */
+    }
+}
+
+
+
+
+
+
+

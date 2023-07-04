@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, FC } from "react";
 import { NavLink } from "react-router-dom";
 import { useViewport } from "../../hooks/useViewport";
 import classNames from "classnames";
 import "./navbar.scss";
 import HamburgerMenuButton from "./ham-menu";
+import { FaShoppingCart } from 'react-icons/fa';
+
+const CartIcon: FC = () => {
+  return <FaShoppingCart />;
+};
+
 
 const navLinksLeft = [
   { to: "/", text: "All" },
@@ -36,7 +42,7 @@ const NavBar = () => {
       {isMobile && <HamburgerMenuButton onClick={showMenu} />}
 
       <div
-        className={classNames(`${displayClass}`, {
+        className={classNames(`navbar ${displayClass}`, {
           "mobile-navbar": isMobile,
         })}
       >
@@ -47,10 +53,10 @@ const NavBar = () => {
         >
           <ul
             className={classNames({
-              "flex justify-around navbar-list": isDesktop,
+              "flex justify-around navbar-list items-center": isDesktop,
             })}
           >
-            <li className="">
+            <li className="navbar-brand">
               <NavLink to="/">Shopii</NavLink>
             </li>
 
@@ -69,10 +75,10 @@ const NavBar = () => {
           </ul>
           <ul
             className={classNames({
-              "flex justify-around navbar-list": !isMobile,
+              "flex justify-around navbar-list items-center": isDesktop,
             })}
           >
-            <li className="">jose@platzi.com</li>
+            {isDesktop && (<li className="">jose@platzi.com</li>)}
 
             {navLinksRight.map((link) => (
               <li key={link.to}>
@@ -87,12 +93,12 @@ const NavBar = () => {
               </li>
             ))}
 
-            <li>C</li>
+            <li className="navbar-cart"><CartIcon /> {"(0)"}</li>
           </ul>
         </nav>
       </div>
     </>
-  );
+  )
 };
 
 export default NavBar;
