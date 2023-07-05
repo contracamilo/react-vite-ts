@@ -1,10 +1,11 @@
-import { useState, FC } from "react";
+import { useState, FC, useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { useViewport } from "../../hooks/useViewport";
 import classNames from "classnames";
 import "./navbar.scss";
 import HamburgerMenuButton from "./ham-menu";
 import { FaShoppingCart } from 'react-icons/fa';
+import { AppContext } from "../../context";
 
 const CartIcon: FC = () => {
   return <FaShoppingCart />;
@@ -27,6 +28,13 @@ const navLinksRight = [
 ];
 
 const NavBar = () => {
+  const context = useContext(AppContext);
+  if (context === undefined) {
+    throw new Error('MyComponent must be used within a MyProvider');
+  }
+
+  const {itemCount} = context.state;
+
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const { isMobile, isDesktop } = useViewport();
   const activeStyle = "underline";
@@ -93,7 +101,7 @@ const NavBar = () => {
               </li>
             ))}
 
-            <li className="navbar-cart"><CartIcon /> {"(0)"}</li>
+            <li className="navbar-cart"><CartIcon /> {`(${itemCount})`}</li>
           </ul>
         </nav>
       </div>

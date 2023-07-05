@@ -3,9 +3,10 @@ import { Product } from "../../types/index";
 
 interface CardProps {
   product: Product;
+  action: () => void
 }
 
-const Card: React.FC<CardProps> = ({ product }) => {
+const Card: React.FC<CardProps> = ({ product, action }) => {
   const { title, images, price, category } = product;
 
   return (
@@ -13,7 +14,7 @@ const Card: React.FC<CardProps> = ({ product }) => {
       <figure className="relative">
         <span className="tag-name absolute b">{category.name}</span>
         <img className="" src={images[1]} alt={title} />
-        <button className="absolute">+</button>
+        <button className="absolute" onClick={action}>+</button>
       </figure>
       <p className="flex justify-between items-center">
         <span className="text-sm font-light">{title}</span>
